@@ -1,4 +1,3 @@
-//VARIABLES
 var carMakes = ["toyota", "ford", "mazda", "nissan", "bmw", "bentley", "audi", "kia", "lexus", "porsche"]
 
 //Empty variables to store values later
@@ -96,7 +95,7 @@ function checkLetters(letter) {
 function complete() {
     console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + guessesRemaining)
 
-    //if WON...then alert, play audio, display image and reset new round
+    //if WON...then alert and reset new round
     if (lettersOfWord.toString() === blanksAndCorrect.toString()) {
         wins++;
         reset()
@@ -107,7 +106,6 @@ function complete() {
     } else if (guessesRemaining === 0) {
         losses++;
         reset()
-        document.getElementById("image").src = "./assets/images/try-again.png"
         document.getElementById("losses").innerHTML = " " + losses;
     }
     //display losses on screen && guesses remaining countdown
@@ -135,5 +133,5 @@ document.onkeyup = function (event) {
     console.log(guesses);
 
     //display/store incorrect letters on screen
-    document.getElementById("playerguesses").innerHTML = "  " + wrongGuess.join(" ");
+    document.getElementById("wrongGuesses").innerHTML = "  " + wrongGuess.join(" ");
 }
