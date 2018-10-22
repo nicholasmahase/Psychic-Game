@@ -5,10 +5,14 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>WORD GUESS GAME</title>
+    <!--Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Reset-->
     <link rel="stylesheet" href="assets/css/reset.css">
+    <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--Custom CSS-->
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -26,7 +30,7 @@
                 <h2>Press Any Key To Guess This Word!</h2>
                 <h3>Category - "Vehicle Makes"</h3>
                 <div>
-                    <img id="image" src="./assets/images/2019-YZF-R1M-Blue_1.png" width="40%" height="200">
+                    <img id="image" src="./assets/images/mulsanne_centenary_duo_2 dws hero 1400x700.jpg" width="50%" height="200">
                 </div>
 
                 <!--Current Word Container-->
@@ -35,30 +39,35 @@
                 </div>
                 <div id="scoreboard">
                     <!--Guesses left Container-->
-                    <div class="sidebar">
+                    <div class="chances">
                         <h3>REMAINING CHANCES:
                             <span id="guessesremaining"></span>
                         </h3>
                     </div>
 
                     <!--Wins counter Container-->
-                    <div class="sidebar">
+                    <div class="winningguesses">
                         <h3>WINS:
                             <span id="wins"></span>
                         </h3>
                     </div>
                     <!--Loss counter Container-->
-                    <div class="sidebar">
+                    <div class="losingguesses">
                         <h3>LOSSES:
                             <span id="losses"></span>
                         </h3>
                     </div>
 
                     <!--Wrong guesses container-->
-                    <div class="sidebar">
+                    <div class="wrongletters">
                         <h3>INCORRECTLY GUESSED LETTERS:
                             <span id="wrongGuesses"></span>
                         </h3>
+                    </div>
+                    <!--Hints-->
+                    <div class="container">
+                        <input type="button" id="btnSearch" value="Click Here For Clues!!!" onclick="getHint();"/>
+                            <p id="message"></p>
                     </div>
                 </div>
             </div>

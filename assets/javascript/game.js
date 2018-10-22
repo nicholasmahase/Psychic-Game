@@ -2,7 +2,7 @@ var carMakes = ["toyota", "ford", "mazda", "nissan", "bmw", "bentley", "audi", "
 
 //Empty variables to store values later
 var randomWord = "";
-var lettersOfWord = []
+var letters = []
 var blanks = 0;
 var blanksAndCorrect = [];
 var wrongGuess = [];
@@ -26,10 +26,10 @@ function Game() {
     randomWord = carMakes[Math.floor(Math.random() * carMakes.length)];
 
     // split the individual word into separate arrays, and store in new array 
-    lettersOfWord = randomWord.split("");
+    letters = randomWord.split("");
 
     //store length of word in blanks, for later use
-    blanks = lettersOfWord.length;
+    blanks = letters.length;
 
     //creating a loop to generate "_" for each letter in array stored in blanks
     for (var i = 0; i < blanks; i++) {
@@ -41,7 +41,7 @@ function Game() {
 
     //console logging 
     console.log(randomWord);
-    console.log(lettersOfWord)
+    console.log(letters)
     console.log(blanks)
     console.log(blanksAndCorrect)
 }
@@ -96,7 +96,7 @@ function complete() {
     console.log("wins:" + wins + "| losses:" + losses + "| guesses left:" + guessesRemaining)
 
     //if WON...then alert and reset new round
-    if (lettersOfWord.toString() === blanksAndCorrect.toString()) {
+    if (letters.toString() === blanksAndCorrect.toString()) {
         wins++;
         reset()
         //display wins on screen
@@ -135,3 +135,8 @@ document.onkeyup = function (event) {
     //display/store incorrect letters on screen
     document.getElementById("wrongGuesses").innerHTML = "  " + wrongGuess.join(" ");
 }
+function getHint()
+{
+var random = randomWord[Math.floor(Math.random() * randomWord.length)];
+document.getElementById("message").innerHTML=random;
+}; 
